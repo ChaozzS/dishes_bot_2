@@ -2,7 +2,7 @@
   "name": "telegram-menu",
   "version": "1.0.0",
   "scripts": {
-    "start": "serve public -p $PORT",
+    "start": "serve public -l tcp://0.0.0.0:$PORT"
     "build": "echo 'Static site'"
   },
   "dependencies": {
