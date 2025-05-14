@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Меню</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .category { margin-bottom: 1em; }
+    button { padding: 10px 20px; margin: 5px; font-size: 1em; }
+  </style>
+</head>
+<body>
+  <h1>Категории</h1>
+  <div id="menu"></div>
+  <script>
+    const MENU = {
+      'Пицца': ['Маргарита', 'Пепперони', 'Гавайская'],
+      'Суши': ['Калифорния', 'Филадельфия', 'Дракон'],
+      'Напитки': ['Кола', 'Сок', 'Вода']
+    };
+
+    const container = document.getElementById('menu');
+    Object.entries(MENU).forEach(([cat, items]) => {
+      const div = document.createElement('div'); div.className = 'category';
+      const h2 = document.createElement('h2'); h2.textContent = cat;
+      div.appendChild(h2);
+      items.forEach(item => {
+        const btn = document.createElement('button');
+        btn.textContent = item;
+        btn.onclick = () => telegram.WebApp.sendData(JSON.stringify({ item }));
+        div.appendChild(btn);
+      });
+      container.appendChild(div);
+    });
+  </script>
+</body>
+</html>

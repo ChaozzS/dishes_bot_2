@@ -1,0 +1,11 @@
+{
+  "name": "telegram-menu",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "serve public -p $PORT",
+    "build": "echo 'Static site'"
+  },
+  "dependencies": {
+    "serve": "^14.2.0"
+  }
+}
